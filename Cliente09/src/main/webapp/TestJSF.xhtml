@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h1>Hola a todos!!</h1>
+
+        <h:outputLabel value="Hola a todos!!"/>
+
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="JavaServerFaces"/>
+                <h:outputLabel value="#{testMB.texto}"/>
+                <h:inputText value="#{testMB.texto}"/>
+                <h:commandButton value="OK" action="#{testMB.mostrar()}"/>
+            </h:panelGrid>
+        </h:form>
+
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nombre: "/>
+                <h:inputText value="" style="width: 200px;"/>
+                <h:outputLabel value="Estado Civil: " />
+
+                <h:selectOneMenu  style="width: 208px;">
+                    <!--
+                    <f:selectItem itemLabel="Soltero"       />
+                    <f:selectItem itemLabel="Casado"        />
+                    <f:selectItem itemLabel="Viudo"         />
+                    <f:selectItem itemLabel="Divorciado"    />
+                    -->
+                    <f:selectItems value="#{estadoCivilMB.estados}" var="e" itemLabel="#{e}"/>
+                </h:selectOneMenu>
+                
+                
+                <!--
+                <h:selectManyMenu>
+                    <f:selectItem itemLabel="Soltero"       />
+                    <f:selectItem itemLabel="Casado"        />
+                    <f:selectItem itemLabel="Viudo"         />
+                    <f:selectItem itemLabel="Divorciado"    />
+                </h:selectManyMenu>
+                -->
+            </h:panelGrid>
+        </h:form>
+
+
+    </h:body>
+</html>
+

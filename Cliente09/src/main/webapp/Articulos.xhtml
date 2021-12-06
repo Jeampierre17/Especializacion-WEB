@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Artículos</title>
+    </h:head>
+    <h:body>
+        <h1>Mantenimiento de artículos</h1>
+        <h:form>
+            <h:panelGrid columns="4">
+                <h:outputLabel value="Nombre: " />
+                <h:inputText value="#{articuloMB.articulo.nombre}" required="true" maxlength="20"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                <h:outputLabel value="Descripción: "/>
+                <h:inputText value="#{articuloMB.articulo.descripcion}" required="true" maxlength="20"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:outputLabel value="Tipo Artículo: "/>
+                <h:inputText value="#{articuloMB.articulo.tipo}" required="true" style="width: 200px;"/>
+                <f:selectItems value="#{tipoArticuloMB.estados}" var="t" 
+                                   itemLabel="#{t}"/>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Especie Recomendada:  "/>
+                <h:selectOneMenu  value="#{articuloMB.articulo.especieRecomendada}" style="width: 208px;">
+                    <f:selectItems value="#{especieRecomendadaMB.especie}" var="t" 
+                                   itemLabel="#{t}"/>
+                </h:selectOneMenu>
+                
+                <h:outputLabel value="Costo: "/>
+                <h:inputText value="#{articuloMB.articulo.costo}" maxlength="8"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:outputLabel value="Precio: "/>
+                <h:inputText value="#{articuloMB.articulo.precio}" maxlength="16"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:outputLabel value="Stock: "/>
+                <h:inputText value="#{articuloMB.articulo.stock}" maxlength="50"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:outputLabel value="Stock Mínimo: "/>
+                <h:inputText value="#{articuloMB.articulo.stockMinimo}" maxlength="120"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:outputLabel value="Stock Maximo: "/>
+                <h:inputText value="#{articuloMB.articulo.stockMaximo}" maxlength="120"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:outputLabel value="Activo:"/>
+                <h:inputText value="#{articuloMB.articulo.activo}" maxlength="9"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+              
+                
+                <h:outputLabel value="Comentarios: "/>
+                <h:inputText value="#{articuloMB.articulo.comentarios}" maxlength="255"  style="width: 200px;"
+                             requiredMessage="Este campo es obligatorio" />
+                
+                <h:commandButton value="Guardar" action="#{articuloMB.save()}" />
+                <h:outputLabel value="#{articuloMB.mensaje}"/>
+
+            </h:panelGrid>
+        </h:form>
+        
+        <h:form>
+            <h:outputLabel value="Buscar Articulo: "/>
+            <h:inputText value="#{articuloMB.buscarArticulo}"/>
+            <h:dataTable value="#{articuloMB.likeArticulos}" var="c" >
+                <h:column>
+                    <f:facet name = "header">Id</f:facet>  
+                    #{c.id}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Nombre</f:facet>  
+                    #{c.nombre}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Descripcion</f:facet>  
+                    #{c.descripcion}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Especie Recomendada</f:facet>  
+                    #{c.especieRecomendada}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Costo</f:facet>  
+                    #{c.costo}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Precio</f:facet>  
+                    #{c.precio}
+                </h:column>
+                 <h:column>
+                    <f:facet name = "header">Stock</f:facet>  
+                    #{c.stock}
+                 </h:column><!-- comment -->
+                  <h:column>
+                    <f:facet name = "header">Stock Mínimo</f:facet>  
+                    #{c.stockMinimo}
+                </h:column>
+                  <h:column>
+                    <f:facet name = "header">Stock Máximo</f:facet>  
+                    #{c.stockMaximo}
+                </h:column>
+                <h:column>
+                    <f:facet name = "header">Activo</f:facet>  
+                    #{c.activo}
+                </h:column><!-- comment -->
+                <h:column>
+                    <f:facet name = "header">Comentario</f:facet>  
+                    #{c.comentarios}
+                </h:column>
+                  
+            </h:dataTable>
+        </h:form>
+        
+    </h:body>
+</html>
+
