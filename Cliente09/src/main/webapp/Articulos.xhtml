@@ -18,8 +18,9 @@
                              requiredMessage="Este campo es obligatorio" />
                 
                 <h:outputLabel value="Tipo Artículo: "/>
-                <h:inputText value="#{articuloMB.articulo.tipo}" required="true" style="width: 200px;"/>
-                <f:selectItems value="#{tipoArticuloMB.estados}" var="t" 
+                <h:selectOneMenu value="#{articuloMB.articulo.tipo}" required="true" style="width: 200px;"
+                              requiredMessage="Este campo es obligatorio" />
+                    <f:selectItems value="#{tipoArticuloMB.estados}" var="t" 
                                    itemLabel="#{t}"/>
                 </h:selectOneMenu>
                 
