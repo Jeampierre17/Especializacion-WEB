@@ -1,0 +1,47 @@
+/* Bloque de comentarios */
+
+body{
+    background-color: bisque;
+}
+h1{
+    color: blue;
+    background-color: cadetblue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+div{
+    background-color: crimson;
+    border: 2px;
+    border-radius: 15px;
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+    padding: 10px;
+}
+
+span{
+    background-color: darkkhaki;
+    border: 2px;
+    border-radius: 15px;
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+    padding: 10px;
+}
+
+#div1{
+    background-color: aqua;
+}
+
+#div2{
+    background-color: chartreuse;
+}
+
+#div3{
+    background-color: yellow;
+}
+
+#div4{
+    background-color: violet;
+}
